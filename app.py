@@ -13,7 +13,7 @@ app.secret_key = 'portfolio2'
 mail_settings = {
     "MAIL_SERVER": 'smtp.gmail.com',
     "MAIL_PORT": 465,
-    "MAIL_USE_TLS": False,
+    "MAIL_USE_TLS": True,
     "MAIL_USE_SSL": True,
     "MAIL_USERNAME": os.getenv("EMAIL"),
     "MAIL_PASSWORD": os.getenv("SENHA")
@@ -46,7 +46,7 @@ def send():
             sender = app.config.get("MAIL_USERNAME"),
             recipients= ['walterclean@gmail.com', app.config.get("MAIL_USERNAME")],
             body = f'''
-            
+
             {formContato.nome} com o e-mail {formContato.email}, te enviou a seguinte mensagem:
             {formContato.mensagem}
             '''
